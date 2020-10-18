@@ -2,6 +2,8 @@ class OrdersController < ApplicationController
 
   def show
     @order = Order.find(params[:id])
+    @line_items = @order.line_items
+    # @product = Product.where("id == ?", @line_item.product_id) 
   end
 
   def create
@@ -9,6 +11,7 @@ class OrdersController < ApplicationController
     order  = create_order(charge)
 
     if order.valid?
+
       empty_cart!
       redirect_to order, notice: 'Your Order has been placed.'
     else
