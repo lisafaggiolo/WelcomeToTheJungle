@@ -5,5 +5,8 @@ class Admin::DashboardController < ApplicationController
                                 except: :index
 
   def show
+    @products = Product.all.count
+    @categories = Category.all.count
+    
   end
 end
