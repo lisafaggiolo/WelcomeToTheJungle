@@ -3,7 +3,7 @@
 <% if cart == {} %>
   <div class="alert">
     <h3>Looks like your cart is empty</h3>
-    <h4><%=link_to "Time to shop!", :root %></h4>
+    <h4><%=link_to "Time to shop!", :root, class: 'btn btn-lg btn-primary' %></h4>
   </div>
 <% else %>
   <header class="page-header">
