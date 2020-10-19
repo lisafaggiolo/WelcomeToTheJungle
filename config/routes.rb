@@ -14,7 +14,10 @@ Rails.application.routes.draw do
   end
 
   # resources :users, only: [:new, :create]
-  # get '/login' => 'session#new'
+  get '/login' => 'sessions#new'
+  post '/login' => 'sessions#create'
+  get '/logout' => 'sessions#destroy'
+  
   get '/register' => 'users#new'
   post '/users' => 'users#create'
     
