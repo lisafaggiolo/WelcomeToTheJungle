@@ -7,19 +7,22 @@ class UsersController < ApplicationController
         @user = User.new(user_params)
         
         if @user.save
-           redirect_to [:root], notice: 'Welcome to the Jungle!'
-            else
-            render :new
-            end
+          session[:user_id] = user.id
+          redirect_to [:root], notice: 'Welcome to the Jungle!'
+        else
+          redirect_to '/register'
         end
     end
+    
+    private
 
     def user_params
         params.require(:user).permit(
           :first_name,
           :last_name,
           :email,
-          :password_digest
+          :password,
+          :password_confirmation
         )
-      end
+    end
 end
