@@ -31,6 +31,5 @@ RSpec.describe Product, type: :model do
     it "has .category" do
       @product.category.presence == true   
     end
-
   end
 end
