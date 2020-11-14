@@ -12,6 +12,10 @@ RSpec.describe Product, type: :model do
   end
   
   describe "Validations" do
+    it "is saved" do
+      @product.presence == true 
+    end
+
     it "has .name" do
       @product.name.presence == true   
     end
@@ -27,5 +31,6 @@ RSpec.describe Product, type: :model do
     it "has .category" do
       @product.category.presence == true   
     end
+
   end
 end
