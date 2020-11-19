@@ -19,8 +19,8 @@ RSpec.feature "ProductDetails", type: :feature do
         price: 64.99
       )
     end
-
   end
+  
   scenario "They see all products" do
     # ACT
     visit root_path
